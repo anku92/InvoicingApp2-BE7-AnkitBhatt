@@ -18,10 +18,12 @@ const Login = () => {
         body: JSON.stringify({ username: username, password: password }),
       });
       const data = await response.json();
-      if (!data.token) {
+      if (!data.access) {
         alert("Login Failed");
       } else {
-        localStorage.setItem("token", data.token);
+        alert("Login Successful")
+        console.log({"access token": data.access})
+        localStorage.setItem("token", data.access);
         navigate("/");
       }
     } catch (error) {

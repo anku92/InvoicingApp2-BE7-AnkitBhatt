@@ -30,6 +30,7 @@ const Signup = () => {
       .then((response) => {
         if (response.status === 201) {
           navigate("/login");
+          alert("Sign Up Successful. Please Login")
         } else {
           alert("Error signing up");
         }
